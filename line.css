@@ -1,0 +1,32 @@
+/* ============================================================
+   LINEで相談するボタン（両サイト共通）
+   LINEのブランドカラー（緑）を使い、ひと目でLINEと分かるようにしています
+   ============================================================ */
+.line-cta {
+  margin-top: 28px;
+  padding: 22px 24px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #d5ead9;
+}
+.line-cta__lead { font-weight: 700; color: #1f3a2a; margin-bottom: 12px; }
+.line-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #06c755;
+  color: #ffffff !important;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-decoration: none !important;
+  border: 0 !important;
+  transition: background-color 0.2s;
+}
+.line-button:hover { background: #05a647; }
+.line-button svg { width: 22px; height: 22px; flex: none; fill: currentColor; }
+.line-cta__note { font-size: 0.85rem; color: #5a636e; margin-top: 10px; }
