@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#26364f">
-  <title>河野智也｜仙台の個人店のホームページ作成・管理</title>
-  <meta name="description" content="仙台のお店や個人事業のホームページを、お話を伺うところから作り、公開後の更新・管理まで一緒に続けます。SNSの告知もまとめて楽に。組織づくり・人材育成メンターの河野智也が、ひとりで丁寧に担当します。">
+  <title>河野智也｜仙台のお店・個人事業のホームページ作成・管理</title>
+  <meta name="description" content="仙台のお店や個人事業のホームページを、お話を伺うところから作り、公開後の更新・管理まで一緒に続けます。変更はLINEで伝えるだけ。SNSの告知もまとめて楽に。組織づくり・人材育成メンターの河野智也が、ひとりで担当します。">
 
-  <meta property="og:title" content="河野智也｜仙台の個人店のホームページ作成・管理">
-  <meta property="og:description" content="お店のホームページ、作って、一緒に育てます。公開後の更新・管理やSNSの告知まで、まとめてご相談ください。">
+  <meta property="og:title" content="河野智也｜お店のホームページ、作って、一緒に育てます。">
+  <meta property="og:description" content="仙台のお店・個人事業のホームページ作成と、公開後の更新・管理。変更はLINEで伝えるだけです。">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="image/works-training-pc.jpg">
+  <meta property="og:url" content="https://heso710soul-ctrl.github.io/kawano-web/">
+  <meta property="og:image" content="https://heso710soul-ctrl.github.io/kawano-web/image/works-training-pc.jpg">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="line.css">
 </head>
@@ -35,8 +36,8 @@
     </button>
     <nav class="site-nav" id="site-nav" aria-label="サイト内">
       <ul>
-        <li><a href="#services">できること</a></li>
         <li><a href="#works">制作例</a></li>
+        <li><a href="#services">できること</a></li>
         <li><a href="#flow">進め方</a></li>
         <li><a href="#about">つくる人</a></li>
         <li><a href="#faq">よくある質問</a></li>
@@ -48,115 +49,159 @@
 
 <main id="main">
 
-  <!-- ファーストビュー：実際に作ったサイトを並べて見せる -->
+  <!-- ========================================
+       ファーストビュー
+       左：見出し／右：「LINEで伝える → 更新される」やりとりの例
+  ======================================== -->
   <section class="hero">
     <div class="hero__inner">
       <div class="hero__text">
         <h1 class="hero__title">
           <span class="nb">お店のホームページ、</span><span class="nb">作って、</span><span class="nb">一緒に育てます。</span>
         </h1>
-        <p class="hero__lead">お店のことを伺うところから始めて、スマホで見やすいホームページを作ります。公開したあとのお知らせ更新や、インスタ・X・スレッズでの告知まで、まとめて相談できる相手でいたいと思っています。</p>
+        <p class="hero__lead">お店のことを伺うところから始めて、スマホで見やすいホームページを作ります。公開したあとも、「臨時休業にします」「新メニューが出ました」と伝えてもらえれば、こちらで更新します。</p>
         <div class="hero__actions">
           <a class="button" href="#contact">相談してみる</a>
           <a class="text-link" href="#works">制作例を見る</a>
         </div>
       </div>
 
-      <div class="hero__phones" aria-hidden="true">
-        <div class="phone phone--back"><img src="image/works-training-sp.jpg" alt="" width="780" height="1600"></div>
-        <div class="phone phone--front"><img src="image/works-musclebar-sp.jpg" alt="" width="780" height="1600"></div>
+      <figure class="exchange" aria-labelledby="exchange-caption">
+        <div class="exchange__chat">
+          <p class="bubble bubble--shop">
+            <span class="bubble__who">お店の方</span>
+            <span class="nb">来週の火曜は、</span><span class="nb">臨時休業にします！</span>
+            <span class="bubble__time">18:02</span>
+          </p>
+          <p class="bubble bubble--me">
+            <span class="bubble__who">河野</span>
+            <span class="nb">了解です。</span><span class="nb">お知らせに載せました。</span>
+            <span class="bubble__time">18:10</span>
+          </p>
+        </div>
+
+        <div class="phone" aria-hidden="true">
+          <div class="phone__screen">
+            <div class="mock-shop">
+              <p class="mock-shop__name">喫茶 こもれび</p>
+              <p class="mock-shop__sub">仙台・木町通</p>
+            </div>
+            <div class="mock-news">
+              <p class="mock-news__title">お知らせ</p>
+              <ul>
+                <li class="mock-news__new"><time>10.14</time>火曜日は臨時休業します</li>
+                <li><time>10.03</time>秋の限定メニュー、はじめました</li>
+                <li><time>09.28</time>10月の営業日のご案内</li>
+              </ul>
+            </div>
+            <div class="mock-block"></div>
+            <div class="mock-block mock-block--short"></div>
+          </div>
+        </div>
+
+        <figcaption id="exchange-caption" class="exchange__caption">公開後は、たとえばこんなやりとりで更新します（お店は架空の例です）</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ========================================
+       よく伺うお悩み（人材育成サイトと同じ「吹き出し」の形）
+  ======================================== -->
+  <section class="section section--tint" aria-labelledby="worries-title">
+    <div class="section__inner">
+      <h2 class="section__title" id="worries-title">こんなお話を、よく伺います</h2>
+      <ul class="worries">
+        <li>インスタは更新しているけれど、ホームページはない</li>
+        <li>営業時間やメニューが、SNSごとにバラバラになっている</li>
+        <li>前に作ったホームページが、ずっと更新できていない</li>
+        <li>同じ告知を、インスタ・X・スレッズに毎回書くのが大変</li>
+        <li>業者に頼むのは大げさな気がして、何から相談すればいいか分からない</li>
+      </ul>
+      <p class="worries__note">お店の仕事で手いっぱいなのは当然のことです。ひとりで回しているお店や、数人で切り盛りしているお店に、ちょうどいい形を一緒に考えます。</p>
+    </div>
+  </section>
+
+  <!-- ========================================
+       制作例（1件を大きく、残りを並べて）
+  ======================================== -->
+  <section class="section" id="works" aria-labelledby="works-title">
+    <div class="section__inner">
+      <h2 class="section__title" id="works-title">制作例</h2>
+      <p class="section__lead">どれも、お話を伺うところから制作・公開、その後の更新まで担当しているサイトです。</p>
+
+      <article class="feature-work">
+        <a class="feature-work__shots" href="https://musclebar-bell.pages.dev/" target="_blank" rel="noopener" aria-label="マッスルバーベルのサイトを開く">
+          <img class="feature-work__pc" src="image/works-musclebar-pc.jpg" alt="マッスルバーベル 公式サイトのトップページ（パソコン表示）" width="1280" height="800" loading="lazy">
+          <img class="feature-work__sp" src="image/works-musclebar-sp.jpg" alt="" width="780" height="1600" loading="lazy">
+        </a>
+        <div class="feature-work__body">
+          <p class="work-kind">バーの公式サイト</p>
+          <h3 class="work-name">マッスルバーベル<span>仙台・国分町</span></h3>
+          <p>店長のご希望だった「大人の雰囲気」に合わせて、深いワインレッドとゴールドでまとめました。コンセプト・キャスト紹介・料金・メニュー・アクセスを1つにまとめています。</p>
+          <p>お知らせや写真は、店長がスマホの管理画面からいつでも書き換えられます。</p>
+          <a class="text-link" href="https://musclebar-bell.pages.dev/" target="_blank" rel="noopener">サイトを見る</a>
+        </div>
+      </article>
+
+      <div class="works">
+        <article class="work">
+          <a class="work__shot" href="https://heso710soul-ctrl.github.io/kawano-training-profile/" target="_blank" rel="noopener" aria-label="河野智也 組織づくり・人材育成メンターのサイトを開く">
+            <img src="image/works-training-pc.jpg" alt="河野智也 組織づくり・人材育成メンターのサイトのトップページ" width="1280" height="800" loading="lazy">
+          </a>
+          <p class="work-kind">個人事業のプロフィールサイト</p>
+          <h3 class="work-name">河野智也｜組織づくり・人材育成メンター</h3>
+          <p>「話しやすさ」が伝わるよう、写真と言葉づかいを中心に組み立てました。お問い合わせはGmailに届き、一覧表にも自動で記録されます。ブログを書くと、トップの新着欄も自動で変わります。</p>
+          <a class="text-link" href="https://heso710soul-ctrl.github.io/kawano-training-profile/" target="_blank" rel="noopener">サイトを見る</a>
+        </article>
+
+        <article class="work">
+          <a class="work__shot" href="https://heso710soul-ctrl.github.io/HeSoband/" target="_blank" rel="noopener" aria-label="HeSo BAND 公式サイトを開く">
+            <img src="image/works-hesoband-pc.jpg" alt="HeSo BAND 公式サイトのトップページ" width="1280" height="800" loading="lazy">
+          </a>
+          <p class="work-kind">バンドの公式サイト</p>
+          <h3 class="work-name">HeSo BAND（へそバンド）</h3>
+          <p>仙台のアコースティックバンドのサイトです。ライブ写真を大きく使い、メンバー紹介・ライブ情報・動画・ギャラリーを1ページに。出演のご相談がしやすい作りにしています。</p>
+          <a class="text-link" href="https://heso710soul-ctrl.github.io/HeSoband/" target="_blank" rel="noopener">サイトを見る</a>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- よく聞くお悩み -->
-  <section class="section section--tint" aria-labelledby="worries-title">
-    <div class="section__inner">
-      <h2 class="section__title" id="worries-title">こんなこと、ありませんか</h2>
-      <ul class="worries">
-        <li><span class="worries__mark" aria-hidden="true"></span>インスタは更新しているけれど、お店のホームページはない</li>
-        <li><span class="worries__mark" aria-hidden="true"></span>営業時間やメニューの情報が、SNSごとにバラバラになっている</li>
-        <li><span class="worries__mark" aria-hidden="true"></span>前に作ったホームページが、ずっと更新できていない</li>
-        <li><span class="worries__mark" aria-hidden="true"></span>同じ告知を、インスタ・X・スレッズにそれぞれ投稿するのが大変</li>
-        <li><span class="worries__mark" aria-hidden="true"></span>業者に頼むのは大げさな気がして、何から相談すればいいか分からない</li>
-      </ul>
-      <p class="worries__note">お店の仕事で手いっぱいなのは当然のことです。ひとりで回しているお店や、数人で切り盛りしているお店のために、ちょうどいい形を一緒に考えます。</p>
-    </div>
-  </section>
-
-  <!-- できること -->
-  <section class="section" id="services" aria-labelledby="services-title">
+  <!-- ========================================
+       できること
+  ======================================== -->
+  <section class="section section--tint" id="services" aria-labelledby="services-title">
     <div class="section__inner">
       <h2 class="section__title" id="services-title">できること</h2>
 
       <div class="services">
         <article class="service">
+          <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="5" width="20" height="38" rx="4" /><path d="M20 37h8" /><path d="M19 13h10M19 19h10M19 25h6" /></svg>
           <h3>ホームページを作る</h3>
           <p>お店の紹介、メニュー、営業時間・定休日、地図、お知らせなど、お客さんが知りたいことをスマホで見やすくまとめます。写真や文章の準備から一緒に進めます。</p>
         </article>
         <article class="service">
+          <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 12h24v16H18l-6 5v-5H8z" /><path d="M30 30l4 4 8-9" /></svg>
           <h3>公開したあとも、更新・管理する</h3>
           <p>「来週は臨時休業」「新メニューが出た」といった変更を、LINEやメールで伝えてもらえれば反映します。作りっぱなしにしないことを大事にしています。</p>
         </article>
         <article class="service">
+          <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="12" cy="24" r="5" /><circle cx="36" cy="11" r="5" /><circle cx="36" cy="37" r="5" /><path d="M16.5 21.5l15-8M16.5 26.5l15 8" /></svg>
           <h3>SNSの告知を、まとめて楽に</h3>
-          <p>ひとつのお知らせを、インスタ・X・スレッズそれぞれに合う文面に整えます。毎回一から考える手間を減らして、ホームページとSNSの情報もそろえます。</p>
+          <p>ひとつのお知らせを、インスタ・X・スレッズそれぞれに合う文面に整えます。毎回一から考える手間が減り、ホームページとSNSの情報もそろいます。</p>
         </article>
         <article class="service">
+          <svg class="service__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 38V18l14-10 14 10v20z" /><path d="M19 38V27h10v11" /></svg>
           <h3>お店に合わせた小さな仕組み</h3>
-          <p>イベント告知のページ、お問い合わせフォーム、参加者の書き込み欄など、「こんなのがあったら」に合わせた機能も相談できます。</p>
+          <p>店長さんがスマホで書き換えられる管理画面、イベント告知のページ、お問い合わせフォームなど、「こんなのがあったら」に合わせて相談できます。</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- 制作例 -->
-  <section class="section section--tint" id="works" aria-labelledby="works-title">
-    <div class="section__inner">
-      <h2 class="section__title" id="works-title">制作例</h2>
-      <p class="section__lead">いずれも、お話を伺うところから制作・公開、その後の更新まで担当しているサイトです。</p>
-
-      <div class="works">
-        <article class="work">
-          <a class="work__shot" href="https://musclebar-bell.pages.dev/" target="_blank" rel="noopener">
-            <img src="image/works-musclebar-pc.jpg" alt="マッスルバーベル 公式サイトのトップページ" width="1280" height="800" loading="lazy">
-          </a>
-          <div class="work__body">
-            <p class="work__kind">バーの公式サイト</p>
-            <h3>マッスルバーベル（仙台・国分町）</h3>
-            <p>国分町のマッスルバーの公式サイトです。店長のご希望だった「大人の雰囲気」に合わせて、深いワインレッドとゴールドでまとめました。コンセプト・キャスト紹介・料金・メニュー・アクセスを1つにまとめています。お知らせや写真は、店長がスマホの管理画面からいつでも更新できます。</p>
-            <a class="text-link" href="https://musclebar-bell.pages.dev/" target="_blank" rel="noopener">サイトを見る</a>
-          </div>
-        </article>
-
-        <article class="work">
-          <a class="work__shot" href="https://heso710soul-ctrl.github.io/kawano-training-profile/" target="_blank" rel="noopener">
-            <img src="image/works-training-pc.jpg" alt="河野智也 組織づくり・人材育成メンターのサイトのトップページ" width="1280" height="800" loading="lazy">
-          </a>
-          <div class="work__body">
-            <p class="work__kind">個人事業のプロフィールサイト</p>
-            <h3>河野智也｜組織づくり・人材育成メンター</h3>
-            <p>研修・個別相談の内容を伝えるサイトです。「話しやすさ」が伝わるよう、写真と言葉づかいを中心に組み立てました。お問い合わせフォームは、届くとGmailに通知され、一覧表にも自動で記録されます。ブログを書くと、トップページの新着欄も自動で更新されます。</p>
-            <a class="text-link" href="https://heso710soul-ctrl.github.io/kawano-training-profile/" target="_blank" rel="noopener">サイトを見る</a>
-          </div>
-        </article>
-
-        <article class="work">
-          <a class="work__shot" href="https://heso710soul-ctrl.github.io/HeSoband/" target="_blank" rel="noopener">
-            <img src="image/works-hesoband-pc.jpg" alt="HeSo BAND 公式サイトのトップページ" width="1280" height="800" loading="lazy">
-          </a>
-          <div class="work__body">
-            <p class="work__kind">バンドの公式サイト</p>
-            <h3>HeSo BAND（へそバンド）</h3>
-            <p>仙台で活動するアコースティックバンドの公式サイトです。ライブ写真を大きく使い、メンバー紹介・ライブ情報・動画・ギャラリーを1ページにまとめました。ライブハウスやイベントの方が、出演のご相談をしやすい作りにしています。</p>
-            <a class="text-link" href="https://heso710soul-ctrl.github.io/HeSoband/" target="_blank" rel="noopener">サイトを見る</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- 進め方（順番があるので番号つき） -->
+  <!-- ========================================
+       進め方（順番がある内容なので番号つき）
+  ======================================== -->
   <section class="section" id="flow" aria-labelledby="flow-title">
     <div class="section__inner">
       <h2 class="section__title" id="flow-title">進め方</h2>
@@ -179,13 +224,15 @@
         </li>
         <li>
           <h3>一緒に育てる</h3>
-          <p>お知らせの更新や、季節ごとのメニュー変更など、公開後もご相談いただけます。</p>
+          <p>お知らせの更新や、季節ごとのメニュー変更など、公開後もLINEで気軽にご連絡ください。</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- つくる人 -->
+  <!-- ========================================
+       つくる人
+  ======================================== -->
   <section class="section section--tint" id="about" aria-labelledby="about-title">
     <div class="section__inner about">
       <img class="about__photo" src="image/profile.jpg" alt="河野智也" width="1200" height="803">
@@ -194,13 +241,15 @@
         <p class="about__name">河野 智也<span>かわの ともや</span></p>
         <p>仙台在住。携帯キャリア代理店で17年、店舗の現場で接客・スタッフ育成・マネジメントに携わってきました。いまは「組織づくり・人材育成メンター」として、店舗や個人の方の相談に乗っています。</p>
         <p>ホームページづくりでも大事にしているのは、いきなり作り始めずに、まずお店の話をじっくり聴くことです。何を伝えたいのか、誰に来てほしいのかが整理できると、ページの中身は自然と決まっていきます。</p>
-        <p>20年以上バンド活動も続けていて、ライブやイベントの告知がどれだけ大変かも身にしみています。ひとりで担当するので、最初から最後まで同じ人に相談できます。</p>
+        <p>20年以上バンド活動も続けていて、ライブやイベントの告知の大変さも身にしみています。ひとりで担当するので、最初から最後まで同じ人に相談できます。</p>
         <a class="text-link" href="https://heso710soul-ctrl.github.io/kawano-training-profile/" target="_blank" rel="noopener">人材育成メンターとしてのサイトを見る</a>
       </div>
     </div>
   </section>
 
-  <!-- よくある質問 -->
+  <!-- ========================================
+       よくある質問
+  ======================================== -->
   <section class="section" id="faq" aria-labelledby="faq-title">
     <div class="section__inner">
       <h2 class="section__title" id="faq-title">よくある質問</h2>
@@ -229,13 +278,15 @@
     </div>
   </section>
 
-  <!-- お問い合わせ -->
+  <!-- ========================================
+       相談してみる（LINEを先に、フォームはその次）
+  ======================================== -->
   <section class="section section--tint contact" id="contact" aria-labelledby="contact-title">
     <div class="section__inner contact__inner">
       <div class="contact__intro">
         <h2 class="section__title" id="contact-title">相談してみる</h2>
         <p>「まだ作るか決めていない」「話だけ聞いてみたい」という段階でも大丈夫です。</p>
-        <p>フォームからのご相談にはメールで、LINEからのご相談にはLINEで、河野からお返事します。お店のインスタなどがあれば、URLを書いていただけると話が早いです。</p>
+        <p>LINEからのご相談にはLINEで、フォームからのご相談にはメールで、河野からお返事します。お店のインスタなどがあれば、URLを添えていただけると話が早いです。</p>
         <div class="line-cta">
           <p class="line-cta__lead">お店の合間に、LINEでさっと相談したい方はこちら</p>
           <a class="line-button" href="https://lin.ee/wXafRrM" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.48 3 2 6.58 2 11c0 2.62 1.58 4.94 4.02 6.4-.17.86-.6 2.3-.7 2.62-.12.4.15.4.31.29.13-.09 2.03-1.35 3.03-2.03.43.06.88.09 1.34.09 5.52 0 10-3.58 10-8.01S17.52 3 12 3z"/></svg>LINEで相談する</a>
@@ -244,6 +295,7 @@
       </div>
 
       <form class="contact-form" id="contact-form" data-endpoint="https://script.google.com/macros/s/AKfycbyguW6hLjmvPAWn8r3JudXL5r5Kdxzgpg0Vm8V5GaCOGXXpcHTugNtP19MgjFTPXqfD/exec" novalidate>
+        <p class="contact-form__title">フォームで相談する</p>
         <div class="field">
           <label for="cf-name">お名前<span class="req">必須</span></label>
           <input id="cf-name" name="name" type="text" autocomplete="name" required>
