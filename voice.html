@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#26364f">
+  <!-- リンクを送った方だけが開くページなので、検索結果には出さない -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>ご感想をお聞かせください｜河野智也 お店のホームページづくり</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* このページだけの調整（色や部品は style.css をそのまま使っています） */
+    .voice { padding-top: clamp(40px, 7vw, 80px); }
+    .voice__inner { max-width: 44rem; }
+    .voice__eyebrow { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; color: var(--ink-soft); margin-bottom: 10px; }
+    .voice__eyebrow::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--mustard); margin-right: 8px; vertical-align: 1px; }
+    .voice__intro { color: var(--ink-soft); margin-bottom: 32px; }
+    .voice__intro p + p { margin-top: 0.8em; }
+    .voice__shop { color: var(--navy); font-weight: 700; }
+    .q-num { display: inline-flex; align-items: center; justify-content: center; flex: none; width: 1.8em; height: 1.8em; border-radius: 50%; background: var(--mustard-soft); color: var(--navy); font-size: 0.85rem; }
+    .field__hint { font-size: 0.85rem; color: var(--ink-soft); margin-top: -2px; }
+    .consent { display: flex; gap: 10px; align-items: flex-start; font-size: 0.95rem; cursor: pointer; }
+    .consent input { flex: none; width: 18px; height: 18px; margin-top: 3px; accent-color: var(--navy); }
+    .field label .req, .field label .opt { white-space: nowrap; flex: none; }
+    .voice__back { margin-top: 32px; font-size: 0.9rem; }
+    .voice__back a { color: var(--navy); }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="site-name" href="./">
+      <span class="site-name__main">河野 智也</span>
+      <span class="site-name__sub">お店のホームページづくり</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="section section--tint voice" aria-labelledby="voice-title">
+    <div class="section__inner voice__inner">
+      <p class="voice__eyebrow">お客様の声</p>
+      <h1 class="section__title" id="voice-title">ご感想をお聞かせください</h1>
+      <div class="voice__intro">
+        <p><span class="voice__shop" id="voice-greeting" hidden></span>このたびはホームページづくりをお任せいただき、ありがとうございました。</p>
+        <p>よろしければ、頼んでくださった理由や、作ってみての変化を聞かせてください。いただいた声は、これから依頼を考えている方への参考として、ホームページの制作例に載せさせていただくことがあります。2〜3分で書ける内容です。</p>
+      </div>
+
+      <form class="contact-form" id="voice-form" data-endpoint="https://script.google.com/macros/s/AKfycbyguW6hLjmvPAWn8r3JudXL5r5Kdxzgpg0Vm8V5GaCOGXXpcHTugNtP19MgjFTPXqfD/exec" novalidate>
+        <div class="field">
+          <label for="vf-name">お名前<span class="req">必須</span></label>
+          <input id="vf-name" name="name" type="text" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="vf-org">お店の名前<span class="opt">任意</span></label>
+          <input id="vf-org" name="organization" type="text" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="vf-email">メールアドレス<span class="req">必須</span></label>
+          <p class="field__hint">掲載前に内容を確認していただくときだけ使います。公開はしません。</p>
+          <input id="vf-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+        </div>
+
+        <div class="field">
+          <label for="vf-why"><span class="q-num">1</span>河野に頼もうと思ったのは、なぜですか？<span class="req">必須</span></label>
+          <textarea id="vf-why" name="why" rows="5" required placeholder="例）知り合いのバンドのホームページを見て、こんなふうに作ってもらえたらいいなと思ったから。"></textarea>
+        </div>
+        <div class="field">
+          <label for="vf-change"><span class="q-num">2</span>作ってみて、どんなことが変わりましたか？<span class="req">必須</span></label>
+          <textarea id="vf-change" name="change" rows="5" required placeholder="例）お店のことを聞かれたときに、URLを送るだけで伝わるようになった。"></textarea>
+        </div>
+        <div class="field">
+          <label for="vf-extra">そのほか、ひとことあればどうぞ<span class="opt">任意</span></label>
+          <textarea id="vf-extra" name="extra" rows="3"></textarea>
+        </div>
+
+        <fieldset class="field field--choices">
+          <legend>載せるときのお名前の出し方<span class="req">必須</span></legend>
+          <label class="choice"><input type="radio" name="display" value="お店の名前で" required> お店の名前で（例：〇〇店 様）</label>
+          <label class="choice"><input type="radio" name="display" value="お店の名前とお名前で"> お店の名前とお名前で（例：〇〇店 店長 〇〇 様）</label>
+          <label class="choice"><input type="radio" name="display" value="名前は出さない"> 名前は出さない（例：仙台の飲食店 様）</label>
+        </fieldset>
+
+        <div class="field">
+          <label class="consent"><input type="checkbox" name="consent" value="掲載OK" id="vf-consent"> いただいた声を、ホームページなどに載せることに同意します（文章は読みやすく整えることがあります）</label>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label for="vf-website">ウェブサイト</label>
+          <input id="vf-website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button class="button contact-form__submit" type="submit">この内容で送る</button>
+        <p class="contact-form__status" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="voice__back"><a href="./">河野智也｜お店のホームページづくり へ</a></p>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div>
+      <p class="site-footer__name">河野 智也<span>（かわの ともや）</span></p>
+      <p>仙台のお店・個人事業のホームページ作成・管理</p>
+    </div>
+  </div>
+  <p class="site-footer__copy">&copy; 2026 Tomoya Kawano</p>
+</footer>
+
+<script>
+/* ============================================================
+   お客様の声フォーム
+   送り先はトップページのお問い合わせと同じ Google Apps Script です
+   （スクリプトの修正は不要）。同じGmail・記録シートに届き、
+   「ご相談の種類」が「お客様の声」になるので見分けられます。
+
+   URLの最後に ?shop=お店の名前 をつけて送ると、
+   あいさつと「お店の名前」欄に最初から入った状態で開きます。
+   例）voice.html?shop=マッスルバーベル
+   ============================================================ */
+(function () {
+  const form = document.getElementById('voice-form');
+  if (!form) return;
+
+  // ?shop= があれば、あいさつとお店の名前に反映
+  const shop = (new URLSearchParams(location.search).get('shop') || '').trim().slice(0, 60);
+  if (shop) {
+    const greet = document.getElementById('voice-greeting');
+    greet.textContent = shop + ' 様、';
+    greet.hidden = false;
+    form.elements.organization.value = shop;
+  }
+
+  const endpoint = (form.dataset.endpoint || '').trim();
+  const status = form.querySelector('.contact-form__status');
+  const submit = form.querySelector('.contact-form__submit');
+
+  function clearErrors() {
+    form.querySelectorAll('.field-error').forEach((el) => el.remove());
+    form.querySelectorAll('.has-error').forEach((el) => el.classList.remove('has-error'));
+    form.querySelectorAll('[aria-invalid]').forEach((el) => el.removeAttribute('aria-invalid'));
+  }
+
+  function showError(field, text) {
+    const wrap = field.closest('.field');
+    wrap.classList.add('has-error');
+    const p = document.createElement('p');
+    p.className = 'field-error';
+    p.id = (field.id || field.name) + '-error';
+    p.textContent = text;
+    wrap.appendChild(p);
+    field.setAttribute('aria-invalid', 'true');
+    field.setAttribute('aria-describedby', p.id);
+  }
+
+  function validate() {
+    clearErrors();
+    const el = form.elements;
+    const errors = [];
+    if (!el.name.value.trim()) errors.push([el.name, 'お名前を入力してください。']);
+    if (!el.email.value.trim()) errors.push([el.email, 'メールアドレスを入力してください。']);
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.email.value.trim())) errors.push([el.email, 'メールアドレスの形式をご確認ください（例：name@example.com）。']);
+    if (!el.why.value.trim()) errors.push([el.why, 'ひとことでも大丈夫なので、書いていただけるとうれしいです。']);
+    if (!el.change.value.trim()) errors.push([el.change, 'ひとことでも大丈夫なので、書いていただけるとうれしいです。']);
+    if (!form.querySelector('input[name="display"]:checked')) errors.push([form.querySelector('input[name="display"]'), 'お名前の出し方を選んでください。']);
+    errors.forEach(([f, t]) => showError(f, t));
+    if (errors.length) errors[0][0].focus();
+    return errors.length === 0;
+  }
+
+  function setStatus(text, isError) {
+    status.textContent = text;
+    status.classList.toggle('is-error', !!isError);
+  }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    const el = form.elements;
+    const display = form.querySelector('input[name="display"]:checked').value;
+    const consent = el.consent.checked ? '同意あり' : '同意なし（掲載前に確認が必要）';
+
+    // 受け口のスクリプトに合わせて、回答を「ご相談内容」1つにまとめて送る
+    const message = [
+      '【1】河野に頼もうと思った理由',
+      el.why.value.trim(),
+      '',
+      '【2】作ってみて変わったこと',
+      el.change.value.trim(),
+      '',
+      '【ひとこと】',
+      el.extra.value.trim() || '（なし）',
+      '',
+      '【載せるときのお名前】' + display,
+      '【掲載への同意】' + consent
+    ].join('\n');
+
+    const data = new URLSearchParams();
+    data.append('name', el.name.value.trim());
+    data.append('organization', el.organization.value.trim());
+    data.append('email', el.email.value.trim());
+    data.append('tel', '');
+    data.append('topic', 'お客様の声');
+    data.append('message', message);
+    data.append('website', el.website.value);
+    data.append('page', location.href);
+
+    submit.disabled = true;
+    const label = submit.textContent;
+    submit.textContent = '送っています…';
+    setStatus('', false);
+
+    try {
+      const res = await fetch(endpoint, { method: 'POST', body: data });
+      let result = null;
+      try { result = await res.json(); } catch (_) {}
+      if (!res.ok || (result && result.ok === false)) throw new Error((result && result.error) || 'send failed');
+
+      const done = document.createElement('div');
+      done.className = 'contact-done';
+      done.setAttribute('tabindex', '-1');
+      done.innerHTML =
+        '<h3>ありがとうございます！</h3>' +
+        '<p></p>' +
+        '<p>いただいた声は、大切に使わせていただきます。載せる前に、必要に応じてメールで確認のご連絡をします。これからも、お店のホームページを一緒に育てていけたらうれしいです。</p>';
+      done.querySelector('p').textContent = el.name.value.trim() + ' 様、ご感想を受け取りました。';
+      form.replaceChildren(done);
+      done.focus();
+    } catch (err) {
+      submit.disabled = false;
+      submit.textContent = label;
+      setStatus('送れませんでした。通信状況をご確認のうえ、もう一度お試しください。うまくいかない場合は、LINEでお知らせください。', true);
+    }
+  });
+})();
+</script>
+</body>
+</html>
