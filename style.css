@@ -181,15 +181,20 @@ a { color: var(--navy); text-underline-offset: 0.25em; }
   align-items: center;
   gap: clamp(40px, 6vw, 80px);
 }
+/* 見出しは「お店のホームページ、／作って、／一緒に育てます。」の3行で固定。
+   文字の大きさを見出しの入る幅に合わせて決めるので、
+   パソコンの文字設定や画面の広さが違っても、言葉の途中で折り返しません。 */
+.hero__text { container-type: inline-size; }
 .hero__title {
   font-family: var(--font-head);
   font-weight: 700;
-  font-size: clamp(1.9rem, 3.9vw, 3.1rem);
+  font-size: clamp(1.35rem, 8.4cqi, 3.1rem);
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: var(--navy);
   margin-bottom: 28px;
 }
+.hero__line { display: block; white-space: nowrap; }
 .hero__lead { color: var(--ink-soft); max-width: 31rem; margin-bottom: 36px; }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
 
