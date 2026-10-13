@@ -1,0 +1,68 @@
+/* ------------------------------------------------------------
+   制作例の「お客様の声」（クリックで開く）
+   ※ style.css の色・フォントの設定をそのまま使っています
+------------------------------------------------------------ */
+.work-voice {
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+}
+.work-voice summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 44px 14px 16px;
+  position: relative;
+  font-weight: 700;
+  color: var(--navy);
+}
+.work-voice summary::-webkit-details-marker { display: none; }
+/* 吹き出しのしるし */
+.work-voice summary::before {
+  content: "";
+  flex: none;
+  width: 22px;
+  height: 18px;
+  border-radius: 6px;
+  background: var(--mustard);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 45% 75%, 22% 100%, 25% 75%, 0 75%);
+}
+.work-voice summary::after {
+  content: "";
+  position: absolute; right: 18px; top: 50%;
+  width: 9px; height: 9px;
+  border-right: 2px solid var(--navy); border-bottom: 2px solid var(--navy);
+  transform: translateY(-70%) rotate(45deg);
+  transition: transform 0.2s;
+}
+.work-voice[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+.work-voice summary:hover { background: var(--mustard-soft); border-radius: 14px; }
+.work-voice__hint { margin-left: auto; font-size: 0.78rem; font-weight: 500; color: var(--ink-soft); }
+
+.work-voice__body { padding: 4px 20px 20px; }
+.work-voice__body dl { display: grid; gap: 14px; margin: 0; }
+.work-voice__body dt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--mustard-deep);
+}
+.work-voice__body dd { margin: 2px 0 0; color: var(--ink); line-height: 1.9; }
+.work-voice__thanks {
+  margin-top: 16px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: var(--mustard-soft);
+  font-family: var(--font-head);
+  font-weight: 700;
+  color: var(--navy);
+}
+.work-voice__who {
+  margin-top: 12px;
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.work-voice__thanks .nb { display: inline-block; }
