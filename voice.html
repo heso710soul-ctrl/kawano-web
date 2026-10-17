@@ -57,7 +57,7 @@
           <input id="vf-name" name="name" type="text" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="vf-org">お店の名前<span class="opt">任意</span></label>
+          <label for="vf-org">お店・屋号・肩書き<span class="opt">任意</span></label>
           <input id="vf-org" name="organization" type="text" autocomplete="organization">
         </div>
         <div class="field">
@@ -68,11 +68,11 @@
 
         <div class="field">
           <label for="vf-why"><span class="q-num">1</span>河野に頼もうと思ったのは、なぜですか？<span class="req">必須</span></label>
-          <textarea id="vf-why" name="why" rows="5" required placeholder="例）知り合いのバンドのホームページを見て、こんなふうに作ってもらえたらいいなと思ったから。"></textarea>
+          <textarea id="vf-why" name="why" rows="5" required placeholder="例）知り合いのホームページを見て、こんなふうに作ってもらえたらいいなと思ったから。"></textarea>
         </div>
         <div class="field">
           <label for="vf-change"><span class="q-num">2</span>作ってみて、どんなことが変わりましたか？<span class="req">必須</span></label>
-          <textarea id="vf-change" name="change" rows="5" required placeholder="例）お店のことを聞かれたときに、URLを送るだけで伝わるようになった。"></textarea>
+          <textarea id="vf-change" name="change" rows="5" required placeholder="例）お店や活動のことを聞かれたときに、URLを送るだけで伝わるようになった。"></textarea>
         </div>
         <div class="field">
           <label for="vf-extra">そのほか、ひとことあればどうぞ<span class="opt">任意</span></label>
@@ -81,9 +81,10 @@
 
         <fieldset class="field field--choices">
           <legend>載せるときのお名前の出し方<span class="req">必須</span></legend>
-          <label class="choice"><input type="radio" name="display" value="お店の名前で" required> お店の名前で（例：〇〇店 様）</label>
-          <label class="choice"><input type="radio" name="display" value="お店の名前とお名前で"> お店の名前とお名前で（例：〇〇店 店長 〇〇 様）</label>
-          <label class="choice"><input type="radio" name="display" value="名前は出さない"> 名前は出さない（例：仙台の飲食店 様）</label>
+          <label class="choice"><input type="radio" name="display" value="お名前と、お店・屋号・肩書きで" required> お名前と、お店・屋号・肩書きで（例：〇〇店 店長 〇〇 様／フォトグラファー 〇〇 様）</label>
+          <label class="choice"><input type="radio" name="display" value="お名前だけで"> お名前だけで（例：〇〇 様）</label>
+          <label class="choice"><input type="radio" name="display" value="お店・屋号だけで"> お店・屋号だけで（例：〇〇店 様）</label>
+          <label class="choice"><input type="radio" name="display" value="名前は出さない"> 名前は出さない（例：仙台の飲食店 様／仙台のフォトグラファー 様）</label>
         </fieldset>
 
         <div class="field">
@@ -122,20 +123,27 @@
    「ご相談の種類」が「お客様の声」になるので見分けられます。
 
    URLの最後に ?shop=お店の名前 をつけて送ると、
-   あいさつと「お店の名前」欄に最初から入った状態で開きます。
+   あいさつと「お店・屋号・肩書き」欄に最初から入った状態で開きます。
    例）voice.html?shop=マッスルバーベル
+   お店ではなく個人の方には ?name=お名前 をつけて送ると、
+   あいさつと「お名前」欄に最初から入った状態で開きます。
+   肩書きも入れたいときは &shop= を足します。
+   例）voice.html?name=野沢太朗&shop=フォトグラファー
    ============================================================ */
 (function () {
   const form = document.getElementById('voice-form');
   if (!form) return;
 
-  // ?shop= があれば、あいさつとお店の名前に反映
-  const shop = (new URLSearchParams(location.search).get('shop') || '').trim().slice(0, 60);
-  if (shop) {
+  // ?name= / ?shop= があれば、あいさつと入力欄に反映（あいさつは ?name= を優先）
+  const params = new URLSearchParams(location.search);
+  const person = (params.get('name') || '').trim().slice(0, 40);
+  const shop = (params.get('shop') || '').trim().slice(0, 60);
+  if (person) form.elements.name.value = person;
+  if (shop) form.elements.organization.value = shop;
+  if (person || shop) {
     const greet = document.getElementById('voice-greeting');
-    greet.textContent = shop + ' 様、';
+    greet.textContent = (person || shop) + ' 様、';
     greet.hidden = false;
-    form.elements.organization.value = shop;
   }
 
   const endpoint = (form.dataset.endpoint || '').trim();
@@ -230,7 +238,7 @@
       done.innerHTML =
         '<h3>ありがとうございます！</h3>' +
         '<p></p>' +
-        '<p>いただいた声は、大切に使わせていただきます。載せる前に、必要に応じてメールで確認のご連絡をします。これからも、お店のホームページを一緒に育てていけたらうれしいです。</p>';
+        '<p>いただいた声は、大切に使わせていただきます。載せる前に、必要に応じてメールで確認のご連絡をします。これからも、ホームページを一緒に育てていけたらうれしいです。</p>';
       done.querySelector('p').textContent = el.name.value.trim() + ' 様、ご感想を受け取りました。';
       form.replaceChildren(done);
       done.focus();

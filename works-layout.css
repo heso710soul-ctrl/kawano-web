@@ -1,0 +1,16 @@
+/* ============================================================
+   制作例の並べ方（2件目以降の大きな制作例）
+   .feature-work--reverse をつけると、写真が右・説明が左になります。
+   （スマホ画面の重なりは右下のまま。左下に置くとサイト名に重なるため）
+   スマホ幅では1列に戻ります。
+   ============================================================ */
+.feature-work + .feature-work {
+  padding-top: clamp(40px, 6vw, 64px);
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 861px) {
+  .feature-work--reverse { grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr); }
+  .feature-work--reverse .feature-work__shots { order: 2; }
+  .feature-work--reverse .feature-work__body { order: 1; }
+}
