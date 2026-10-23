@@ -14,3 +14,19 @@
   .feature-work--reverse .feature-work__shots { order: 2; }
   .feature-work--reverse .feature-work__body { order: 1; }
 }
+
+/* ============================================================
+   並べて見せる制作例にも、スマホ表示を右下に重ねる
+   （.work__shot--duo をつけた制作例だけ）
+   ============================================================ */
+.work__shot--duo { position: relative; padding-bottom: 36px; padding-right: 28px; }
+.work__shot--duo .work__sp {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 24%;
+  aspect-ratio: 9 / 18.5;
+  border-radius: 16px;
+  border: 5px solid var(--navy);
+  box-shadow: 0 20px 32px -20px rgba(28, 41, 64, 0.7);
+}
