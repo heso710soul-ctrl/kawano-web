@@ -1,0 +1,69 @@
+/* ============================================================
+   スマホのときだけのアコーディオン（fold.js とセット）
+   PC幅では、見出しはいつもどおりの見た目のままです。
+   ============================================================ */
+.fold__toggle {
+  all: unset;
+  display: block;
+  cursor: default;
+}
+.fold__hint, .fold__icon { display: none; }
+.fold-hide { display: none !important; }
+
+@media (max-width: 760px) {
+  .is-foldable .fold__toggle {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .is-foldable .fold__toggle:focus-visible { outline: 2px solid var(--navy); outline-offset: 6px; border-radius: 6px; }
+  .is-foldable .fold__label { flex: 1; min-width: 0; }
+  /* 見出しの横にリンクなどが並ぶ場合も、見出しを横いっぱいに */
+  .is-foldable .section__title { flex: 1 1 100%; width: 100%; }
+
+  /* 「タップで開く」と ＋ のしるし */
+  .is-foldable .fold__hint {
+    display: inline;
+    flex: none;
+    font-family: var(--font-body, sans-serif);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+  }
+  .is-foldable:not(.is-folded) .fold__hint { display: none; }
+  .is-foldable .fold__icon {
+    display: block;
+    flex: none;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1.5px solid var(--navy);
+  }
+  .is-foldable .fold__icon::before,
+  .is-foldable .fold__icon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12px;
+    height: 1.5px;
+    background: var(--navy);
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s ease;
+  }
+  .is-foldable .fold__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+  .is-foldable:not(.is-folded) .fold__icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+
+  /* 閉じているときは、上下の余白も小さく */
+  .section.is-folded { padding-top: 26px; padding-bottom: 26px; }
+  .section.is-folded .section__title { margin-bottom: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fold__icon::before, .fold__icon::after { transition: none; }
+}

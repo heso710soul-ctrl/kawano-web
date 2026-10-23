@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="line.css">
   <link rel="stylesheet" href="voice-card.css">
   <link rel="stylesheet" href="works-layout.css">
+  <link rel="stylesheet" href="fold.css">
 </head>
 <body>
 
@@ -225,7 +226,7 @@
   <!-- ========================================
        できること
   ======================================== -->
-  <section class="section section--tint" id="services" aria-labelledby="services-title">
+  <section class="section section--tint" id="services" data-fold aria-labelledby="services-title">
     <div class="section__inner">
       <h2 class="section__title" id="services-title">できること</h2>
 
@@ -257,7 +258,7 @@
   <!-- ========================================
        進め方（順番がある内容なので番号つき）
   ======================================== -->
-  <section class="section" id="flow" aria-labelledby="flow-title">
+  <section class="section" id="flow" data-fold aria-labelledby="flow-title">
     <div class="section__inner">
       <h2 class="section__title" id="flow-title">進め方</h2>
       <ol class="flow">
@@ -288,7 +289,7 @@
   <!-- ========================================
        つくる人
   ======================================== -->
-  <section class="section section--tint" id="about" aria-labelledby="about-title">
+  <section class="section section--tint" id="about" data-fold aria-labelledby="about-title">
     <div class="section__inner about">
       <img class="about__photo" src="image/profile.jpg" alt="河野智也" width="1200" height="803">
       <div class="about__body">
@@ -409,5 +410,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="fold.js"></script>
 </body>
 </html>
